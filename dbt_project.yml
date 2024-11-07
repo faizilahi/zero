@@ -1,0 +1,21 @@
+name: 'khedmat_project'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+# dbt ko guide karta hai ke models kis folder mein hain
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+
+# BigQuery mein compiled queries ke liye
+target-path: "target"  
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  khedmat_project:
+    +schema: "chatpipeline"  # Tumhara BigQuery dataset ka naam
+    +materialized: "view"    # Data ka structure; use 'table' agar permanent table chahiye ho
