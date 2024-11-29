@@ -1,0 +1,24 @@
+name: 'khedmat_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'default'
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  khedmat_project:
+    +schema: "chatpipeline.dbt_Jussu_chatpipeline"
+    +materialized: "table"   # Change to "view" if you prefer a virtual table
+    staging:
+      +materialized: "view"
+    marts:
+      +materialized: "table"

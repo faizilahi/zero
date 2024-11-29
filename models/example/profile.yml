@@ -1,0 +1,10 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth            # oauth tumhare Google account authentication ke liye
+      project: chatpipeline.google_sheets.khedmat_responses  # Tumhara Google Cloud Project ID
+      dataset: google_sheets    # Tumhara BigQuery dataset name (tumhara dataset "google_sheets" hai)
+      threads: 1
+      timeout_seconds: 300
