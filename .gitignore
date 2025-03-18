@@ -1,4 +1,20 @@
 
+
+# virtual env ignore
+dbt_venv/
+
+# compiled targets ignore
 target/
 dbt_packages/
 logs/
+
+# vscode settings ignore
+.vscode/
+
+# OS-specific
+.DS_Store
+
+# log aur temporary files
+*.log
+*.pyc
+__pycache__/
